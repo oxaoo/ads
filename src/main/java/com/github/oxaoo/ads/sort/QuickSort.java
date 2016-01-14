@@ -24,7 +24,6 @@ public class QuickSort {
         int pivot = array[pivotIndex];
 
         while (lb < rb) {
-
             while (array[lb] < pivot) lb++;
             while (array[rb] > pivot) rb--;
 
@@ -35,7 +34,7 @@ public class QuickSort {
             }
         }
 
-        if (rb > begin) sort(begin ,rb);
+        if (rb > begin) sort(begin, rb);
         if (lb < end) sort(lb, end);
     }
 
