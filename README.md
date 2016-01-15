@@ -8,9 +8,9 @@ Implementation of algorithms and data structures in Java.
 - **Class:** Exchange sort  
 - **Stable:** No  
 - **Comparison:** Yes  
-- **Worst case performance:** O(n log n)  
+- **Worst case performance:** O(n^2)  
 - **Average case performance:** O(n log n)  
-- **Best case performance:** O(n^2)  
+- **Best case performance:** O(n log n)  
 - **Worst case space complexity:** O(n)  
 
 ### [1.2. Merge sort] (https://github.com/oxaoo/ads/blob/master/src/main/java/com/github/oxaoo/ads/sort/MergeSort.java)
