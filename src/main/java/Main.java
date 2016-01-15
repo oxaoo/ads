@@ -1,6 +1,4 @@
-import com.github.oxaoo.ads.sort.MergeSort;
-import com.github.oxaoo.ads.sort.QuickSort;
-import com.github.oxaoo.ads.sort.QuickSortRepeat;
+import com.github.oxaoo.ads.sort.*;
 import com.github.oxaoo.ads.support.Array;
 
 public class Main {
@@ -9,6 +7,17 @@ public class Main {
 
         quickSort();
         mergeSort();
+        heapSort();
+    }
+
+    private static void heapSort() {
+
+        int[] array = Array.generate(10, 0, 10);
+        System.out.println("Array: ");
+        Array.print(array);
+        HeapSort.run(array);
+        System.out.println("Array after HeapSort: ");
+        Array.print(array);
     }
 
     private static void quickSort() {
