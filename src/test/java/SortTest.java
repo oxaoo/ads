@@ -1,3 +1,4 @@
+import com.github.oxaoo.ads.sort.BubbleSort;
 import com.github.oxaoo.ads.sort.HeapSort;
 import com.github.oxaoo.ads.sort.MergeSort;
 import com.github.oxaoo.ads.sort.QuickSort;
@@ -33,6 +34,16 @@ public class SortTest {
         for (int i = 0; i < 1000; i++) {
             int[] array = Array.generate(1000);
             HeapSort.run(array);
+            for (int j = 1; j < array.length; j++)
+                assertTrue(array[j - 1] <= array[j]);
+        }
+    }
+
+    @Test
+    public void BubbleSortTest() {
+        for (int i = 0; i < 1000; i++) {
+            int[] array = Array.generate(1000);
+            BubbleSort.run(array);
             for (int j = 1; j < array.length; j++)
                 assertTrue(array[j - 1] <= array[j]);
         }

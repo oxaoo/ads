@@ -8,6 +8,7 @@ public class Main {
         quickSort();
         mergeSort();
         heapSort();
+        bubbleSort();
     }
 
     private static void heapSort() {
@@ -37,6 +38,16 @@ public class Main {
         Array.print(array);
         MergeSort.run(array);
         System.out.println("Array after MergeSort: ");
+        Array.print(array);
+    }
+
+    private static void bubbleSort() {
+
+        int[] array = Array.generate(10, 0, 10);
+        System.out.println("Array: ");
+        Array.print(array);
+        BubbleSort.run(array);
+        System.out.println("Array after BubbleSort: ");
         Array.print(array);
     }
 }

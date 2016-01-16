@@ -20,7 +20,7 @@ public class HeapSort {
 
         //sorting.
         for (int i = array.length - 1; i > 0; i--) {
-            swap(i, 0);
+            exchange(i, 0);
             siftDown(0, i - 1);
         }
     }
@@ -34,11 +34,11 @@ public class HeapSort {
 
         if (array[cur] >= array[child]) return;
 
-        swap(cur, child);
+        exchange(cur, child);
         siftDown(child, rb);
     }
 
-    private void swap(int i, int j) {
+    private void exchange(int i, int j) {
         int temp = array[i];
         array[i] = array[j];
         array[j] = temp;
