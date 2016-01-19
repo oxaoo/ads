@@ -39,3 +39,12 @@ Implementation of algorithms and data structures in Java.
 - **Average case performance:** O(n^2)  
 - **Best case performance:** O(n)  
 - **Worst case space complexity:** O(1) 
+
+### [1.5. Insertion sort] (https://github.com/oxaoo/ads/blob/master/src/main/java/com/github/oxaoo/ads/sort/InsertionSort.java)
+- **Class:** Insertion sort  
+- **Stable:** Yes  
+- **Comparison:** Yes  
+- **Worst case performance:** O(n^2)  
+- **Average case performance:** O(n^2)  
+- **Best case performance:** O(n)  
+- **Worst case space complexity:** O(1) 

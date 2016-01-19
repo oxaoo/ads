@@ -9,6 +9,17 @@ public class Main {
         mergeSort();
         heapSort();
         bubbleSort();
+        insertionSort();
+    }
+
+    private static void insertionSort() {
+
+        int[] array = Array.generate(10, 0, 10);
+        System.out.println("Array: ");
+        Array.print(array);
+        InsertionSort.run(array);
+        System.out.println("Array after InsertionSort: ");
+        Array.print(array);
     }
 
     private static void heapSort() {
@@ -46,7 +57,8 @@ public class Main {
         int[] array = Array.generate(10, 0, 10);
         System.out.println("Array: ");
         Array.print(array);
-        BubbleSort.run(array);
+        //BubbleSort.run(array);
+        BubbleSortRepeat.run(array);
         System.out.println("Array after BubbleSort: ");
         Array.print(array);
     }

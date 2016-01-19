@@ -1,7 +1,4 @@
-import com.github.oxaoo.ads.sort.BubbleSort;
-import com.github.oxaoo.ads.sort.HeapSort;
-import com.github.oxaoo.ads.sort.MergeSort;
-import com.github.oxaoo.ads.sort.QuickSort;
+import com.github.oxaoo.ads.sort.*;
 import com.github.oxaoo.ads.support.Array;
 import org.junit.Test;
 
@@ -44,6 +41,26 @@ public class SortTest {
         for (int i = 0; i < 1000; i++) {
             int[] array = Array.generate(1000);
             BubbleSort.run(array);
+            for (int j = 1; j < array.length; j++)
+                assertTrue(array[j - 1] <= array[j]);
+        }
+    }
+
+    @Test
+    public void InsertionSortTest() {
+        for (int i = 0; i < 1000; i++) {
+            int[] array = Array.generate(1000);
+            InsertionSort.run(array);
+            for (int j = 1; j < array.length; j++)
+                assertTrue(array[j - 1] <= array[j]);
+        }
+    }
+
+    @Test
+    public void InsertionSort2Test() {
+        for (int i = 0; i < 1000; i++) {
+            int[] array = Array.generate(1000);
+            InsertionSort.run2(array);
             for (int j = 1; j < array.length; j++)
                 assertTrue(array[j - 1] <= array[j]);
         }
