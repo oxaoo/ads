@@ -10,6 +10,17 @@ public class Main {
         heapSort();
         bubbleSort();
         insertionSort();
+        selectionSort();
+    }
+
+    private static void selectionSort() {
+
+        int[] array = Array.generate(10, 0, 10);
+        System.out.println("Array: ");
+        Array.print(array);
+        SelectionSort.run(array);
+        System.out.println("Array after SelectionSort: ");
+        Array.print(array);
     }
 
     private static void insertionSort() {
