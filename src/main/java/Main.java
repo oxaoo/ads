@@ -11,6 +11,17 @@ public class Main {
         bubbleSort();
         insertionSort();
         selectionSort();
+        bucketSort();
+    }
+
+    private static void bucketSort() {
+
+        int[] array = Array.generate(5, 0, 10);
+        System.out.println("Array: ");
+        Array.print(array);
+        BucketSort.run(array);
+        System.out.println("Array after BucketSort: ");
+        Array.print(array);
     }
 
     private static void selectionSort() {

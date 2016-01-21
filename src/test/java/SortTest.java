@@ -75,4 +75,14 @@ public class SortTest {
                 assertTrue(array[j - 1] <= array[j]);
         }
     }
+
+    @Test
+    public void BucketSortTest() {
+        for (int i = 0; i < 1000; i++) {
+            int[] array = Array.generate(1000);
+            BucketSort.run(array);
+            for (int j = 1; j < array.length; j++)
+                assertTrue(array[j - 1] <= array[j]);
+        }
+    }
 }
