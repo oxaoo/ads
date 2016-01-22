@@ -16,7 +16,7 @@ public class Main {
 
     private static void bucketSort() {
 
-        int[] array = Array.generate(5, 0, 10);
+        int[] array = Array.generate(10, 0, 10);
         System.out.println("Array: ");
         Array.print(array);
         BucketSort.run(array);

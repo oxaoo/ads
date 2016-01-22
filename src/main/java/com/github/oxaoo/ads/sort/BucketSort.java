@@ -11,7 +11,7 @@ public class BucketSort {
 
         BucketSort bs = new BucketSort();
         bs.array = array;
-        if (!bs.allocBucket()) return;
+        if (!bs.allocBuckets()) return;
         bs.sort();
     }
 
@@ -29,17 +29,16 @@ public class BucketSort {
         int shift = 0;
         //sorting the buckets.
         for (int i = 0; i < buckets.length; i++) {
-            insertionSort(buckets[i], counter[i]);
+            InsertionSort.run(buckets[i], 0, counter[i]);
             System.arraycopy(buckets[i], 0, array, shift, counter[i]);
             shift += counter[i];
         }
     }
 
     //determining the number of blocks.
-    private boolean allocBucket() {
+    private boolean allocBuckets() {
         int rb = array.length;
-        min = array[0];
-        int max = min;
+        int max = min = array[0];
 
         for (int i = 1; i < rb; i++)
             if (array[i] < min) min = array[i];
@@ -52,24 +51,13 @@ public class BucketSort {
         int numBuckets;
         if (max - min <= sizeArray) {
             numBuckets = max - min + 1;
-            range = 1;
+            range = 1.0;
         } else {
-            numBuckets = sizeArray + 1;
-            range = (double) (max - min) / (double) sizeArray;
+            numBuckets = sizeArray;
+            range = (double) (max - min + 1) / (double) sizeArray;
         }
         buckets = new int[numBuckets][sizeArray];
 
         return true;
-    }
-
-    //ordinary insertion sort.
-    private void insertionSort(int[] array, int rb) {
-        int cur, j;
-        for (int i = 1; i < rb; i++) {
-            cur = array[i];
-            for (j = i - 1; j >= 0 && cur < array[j]; j--)
-                array[j + 1] = array[j];
-            array[j + 1] = cur;
-        }
     }
 }
