@@ -12,6 +12,17 @@ public class Main {
         insertionSort();
         selectionSort();
         bucketSort();
+        lsdSort();
+    }
+
+    private static void lsdSort() {
+
+        int[] array = Array.generate(10, 0, 10);
+        System.out.println("Array: ");
+        Array.print(array);
+        LSDRadixSort.run(array);
+        System.out.println("Array after LSDRadixtSort: ");
+        Array.print(array);
     }
 
     private static void bucketSort() {

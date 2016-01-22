@@ -66,3 +66,12 @@ Implementation of algorithms and data structures in Java.
 - **Average case performance:** O(n+k)  
 - **Best case performance:** O(n)  
 - **Worst case space complexity:** O(nk) 
+
+### [1.8. Radix sort (LSD)] (https://github.com/oxaoo/ads/blob/master/src/main/java/com/github/oxaoo/ads/sort/LSDRadixSort.java)
+- **Class:** Distribution sort  
+- **Stable:** *No*   
+- **Comparison:** No 
+- **Worst case performance:** O(nk)  
+- **Average case performance:** O(nk)  
+- **Best case performance:** O(nk)  
+- **Worst case space complexity:** O(n + k) 
