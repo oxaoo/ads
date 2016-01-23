@@ -3,7 +3,6 @@ package com.github.oxaoo.ads.sort;
 
 public class LSDRadixSort {
     private int[] array;
-    private int mask = 255; //hex = ff.
 
     public static void run(int[] array) {
         if (array == null || array.length < 2)
@@ -15,47 +14,25 @@ public class LSDRadixSort {
     }
 
     private void sort() {
-        int bytes = 4; // for int.
-        int m = 256; //the number of possible values.
-        int n = array.length; //size of array.
-        int[] aux = new int[n]; //auxiliary array.
+        int[] aux = new int[array.length];
 
-        for (int k = 0; k < bytes; k++) {
-            int[] count = new int[m + 1];
-            int c;
-            //frequency of values.
-            for (int a : array)
-                count[value(a, k) + 1]++;
-
-            //the number of items before...
-            for (int im = 1; im <= m; im++)
-                count[im] += count[im - 1];
-
-            if (k == bytes - 1)
-                processingSignByte(count, m);
-
-            //ordering elements.
-            for (int a : array)
-                aux[count[value(a, k)]++] = a;
+        //for 31 to 0.
+        for (int shift = Integer.SIZE - 1, j = 0; shift >= 0; shift--, j = 0) {
+            for (int i = 0; i < array.length; i++) {
+                //if cur bit is 1.
+                boolean isOne = array[i] << shift >= 0;
+                //if last bit is 1, then it number is negative.
+                if (shift == 0 ? !isOne : isOne)
+                    aux[j++] = array[i]; //aux contains is higher number.
+                else
+                    array[i - j] = array[i];
+            }
+            //merge higher and lower numbers.
+            for (int i = j; i < aux.length; i++)
+                aux[i] = array[i - j];
 
             //copy back.
-            System.arraycopy(aux, 0, array, 0, n);
+            System.arraycopy(aux, 0, array, 0, aux.length);
         }
-    }
-
-    //for the most significant byte, i.e. accounting negative values.
-    // 0-127[00-7f]: positive number; 128-255[80-ff]: negative number.
-    private void processingSignByte(int[] count, int m) {
-        int offset1 = count[m] - count[m / 2];
-        int offset2 = count[m / 2];
-        for (int i = 0; i < m / 2; i++)
-            count[i] += offset1;
-        for (int i = m / 2; i < m; i++)
-            count[i] -= offset2;
-    }
-
-    //byte value.
-    private int value(int num, int offset) {
-        return (num >> 8 * offset) & mask;
     }
 }
