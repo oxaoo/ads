@@ -7,7 +7,7 @@ public class InsertionSort {
 
     public static void run(int[] array, int lb, int rb) {
         if (array == null || array.length < 2
-                || lb < 0 || rb > array.length || lb == rb)
+                || lb < 0 || rb > array.length || lb >= rb)
             return;
 
         int[] subArray = Arrays.copyOfRange(array, lb, rb);
