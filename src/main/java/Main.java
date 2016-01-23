@@ -13,11 +13,24 @@ public class Main {
         selectionSort();
         bucketSort();
         lsdSort();
+        msdSort();
+    }
+
+    private static void msdSort() {
+
+        int[] array = Array.generate(10, 0, 10);
+        //int[] array = {5, -2, 28, 657, -657, 0, 12, 66, 0, 69443, -44, 1};
+        System.out.println("Array: ");
+        Array.print(array);
+        MSDRadixSort.run(array);
+        System.out.println("Array after LSDRadixtSort: ");
+        Array.print(array);
     }
 
     private static void lsdSort() {
 
         int[] array = Array.generate(10, 0, 10);
+        //int[] array = {5, -2, 28, 657, -657, 0, 12, 66, 0, 69443, -44, 1};
         System.out.println("Array: ");
         Array.print(array);
         LSDRadixSort.run(array);

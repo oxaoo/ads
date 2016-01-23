@@ -69,7 +69,16 @@ Implementation of algorithms and data structures in Java.
 
 ### [1.8. Radix sort (LSD)] (https://github.com/oxaoo/ads/blob/master/src/main/java/com/github/oxaoo/ads/sort/LSDRadixSort.java)
 - **Class:** Distribution sort  
-- **Stable:** *No*   
+- **Stable:** Yes   
+- **Comparison:** No 
+- **Worst case performance:** O(nk)  
+- **Average case performance:** O(nk)  
+- **Best case performance:** O(nk)  
+- **Worst case space complexity:** O(n + k) 
+
+### [1.9. Radix sort (MSD)] (https://github.com/oxaoo/ads/blob/master/src/main/java/com/github/oxaoo/ads/sort/MSDRadixSort.java)
+- **Class:** Distribution sort  
+- **Stable:** Yes  
 - **Comparison:** No 
 - **Worst case performance:** O(nk)  
 - **Average case performance:** O(nk)  

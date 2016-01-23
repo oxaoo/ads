@@ -21,13 +21,15 @@ public class LSDRadixSort {
             for (int i = 0; i < array.length; i++) {
                 //if cur bit is 1.
                 boolean isOne = array[i] << shift >= 0;
-                //if last bit is 1, then it number is negative.
+                //if last bit (#31) is 1, then it number is negative.
+                //aux contains the numbers of the odd bits (expect a msb).
+                //array contains the numbers of the even bits (expect a msb).
                 if (shift == 0 ? !isOne : isOne)
-                    aux[j++] = array[i]; //aux contains is higher number.
+                    aux[j++] = array[i];
                 else
                     array[i - j] = array[i];
             }
-            //merge higher and lower numbers.
+            //merge of ordered numbers.
             for (int i = j; i < aux.length; i++)
                 aux[i] = array[i - j];
 
