@@ -61,7 +61,7 @@ Implementation of algorithms and data structures in Java.
 ### [1.7. Bucket sort] (https://github.com/oxaoo/ads/blob/master/src/main/java/com/github/oxaoo/ads/sort/BucketSort.java)
 - **Class:** Distribution sort  
 - **Stable:** Yes   
-- **Comparison:** *Yes*  
+- **Comparison:** No  
 - **Worst case performance:** O(n^2)  
 - **Average case performance:** O(n+k)  
 - **Best case performance:** O(n)  
@@ -84,3 +84,12 @@ Implementation of algorithms and data structures in Java.
 - **Average case performance:** O(nk)  
 - **Best case performance:** O(nk)  
 - **Worst case space complexity:** O(n + k) 
+
+### [1.10. Counting sort] (https://github.com/oxaoo/ads/blob/master/src/main/java/com/github/oxaoo/ads/sort/CountingSort.java)
+- **Class:** Distribution sort  
+- **Stable:** Yes  
+- **Comparison:** No 
+- **Worst case performance:** O(n + k)  
+- **Average case performance:** O(n + k)  
+- **Best case performance:** O(n + k)  
+- **Worst case space complexity:** O(k) 
