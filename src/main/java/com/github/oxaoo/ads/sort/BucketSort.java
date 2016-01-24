@@ -22,7 +22,8 @@ public class BucketSort {
         //distribution in buckets.
         int[] counter = new int[buckets.length];
         for (int i = 0; i < rb; i++) {
-            b = (int) ((array[i] - min) / range);
+            //cast to long, to avoid overflow.
+            b = (int) (((long) array[i] - (long) min) / range);
             buckets[b][counter[b]++] = array[i];
         }
 
@@ -49,12 +50,14 @@ public class BucketSort {
 
         int sizeArray = array.length;
         int numBuckets;
-        if (max - min <= sizeArray) {
+        //avoid overflow.
+        long dif = ((long) max) - ((long) min);
+        if (dif <= sizeArray) {
             numBuckets = max - min + 1;
             range = 1.0;
         } else {
             numBuckets = sizeArray;
-            range = (double) (max - min + 1) / (double) sizeArray;
+            range = (double) (dif + 1) / (double) sizeArray;
         }
         buckets = new int[numBuckets][sizeArray];
 

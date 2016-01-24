@@ -1,6 +1,8 @@
 import com.github.oxaoo.ads.sort.*;
 import com.github.oxaoo.ads.support.Array;
 
+import static com.github.oxaoo.ads.support.Array.TypeArray.*;
+
 public class Main {
 
     public static void main(String[] args) {
