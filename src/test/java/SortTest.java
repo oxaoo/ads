@@ -11,7 +11,7 @@ public class SortTest {
 
     private int iter = 1000;
     private int size = 1000;
-    private TypeArray type = SIGNED;
+    private TypeArray type = UNSIGNED;
     private int[][] arrays;
 
     public int[] getArray(int index) {
@@ -131,6 +131,18 @@ public class SortTest {
             //int[] array = Array.generate(1000);
             int[] array = getArray(i);
             MSDRadixSort.run(array);
+            for (int j = 1; j < array.length; j++)
+                assertTrue(array[j - 1] <= array[j]);
+        }
+    }
+
+    @Test
+    public void CountingSortTest() {
+        for (int i = 0; i < iter; i++) {
+            //avoid jvm overflow.
+            int[] array = Array.generate(1000, 0, Integer.MAX_VALUE / 100);
+            //int[] array = getArray(i);
+            CountingSort.run(array);
             for (int j = 1; j < array.length; j++)
                 assertTrue(array[j - 1] <= array[j]);
         }

@@ -16,6 +16,17 @@ public class Main {
         bucketSort();
         lsdSort();
         msdSort();
+        countingSort();
+    }
+
+    private static void countingSort() {
+
+        int[] array = Array.generate(10, 0, 10);
+        System.out.println("Array: ");
+        Array.print(array);
+        CountingSort.run(array);
+        System.out.println("Array after CountingSort: ");
+        Array.print(array);
     }
 
     private static void msdSort() {
