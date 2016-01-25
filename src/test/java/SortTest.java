@@ -140,9 +140,20 @@ public class SortTest {
     public void CountingSortTest() {
         for (int i = 0; i < iter; i++) {
             //avoid jvm overflow.
-            int[] array = Array.generate(1000, 0, Integer.MAX_VALUE / 100);
+            int[] array = Array.generate(1000, 0, Integer.MAX_VALUE / 1000);
             //int[] array = getArray(i);
             CountingSort.run(array);
+            for (int j = 1; j < array.length; j++)
+                assertTrue(array[j - 1] <= array[j]);
+        }
+    }
+
+    @Test
+    public void ShellSortTest() {
+        for (int i = 0; i < iter; i++) {
+            //int[] array = Array.generate(1000);
+            int[] array = getArray(i);
+            ShellSort.run(array);
             for (int j = 1; j < array.length; j++)
                 assertTrue(array[j - 1] <= array[j]);
         }

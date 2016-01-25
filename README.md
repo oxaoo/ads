@@ -93,3 +93,12 @@ Implementation of algorithms and data structures in Java.
 - **Average case performance:** O(n + k)  
 - **Best case performance:** O(n + k)  
 - **Worst case space complexity:** O(k) 
+
+### [1.11. Shell sort] (https://github.com/oxaoo/ads/blob/master/src/main/java/com/github/oxaoo/ads/sort/ShellSort.java)
+- **Class:** Insertion sort  
+- **Stable:** No  
+- **Comparison:** Yes  
+- **Worst case performance:** O(n^2)  
+- **Average case performance:** O(n^(4/3))  
+- **Best case performance:** O(n log n)  
+- **Worst case space complexity:** O(1) 

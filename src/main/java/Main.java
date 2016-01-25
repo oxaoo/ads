@@ -1,8 +1,6 @@
 import com.github.oxaoo.ads.sort.*;
 import com.github.oxaoo.ads.support.Array;
 
-import static com.github.oxaoo.ads.support.Array.TypeArray.*;
-
 public class Main {
 
     public static void main(String[] args) {
@@ -17,6 +15,17 @@ public class Main {
         lsdSort();
         msdSort();
         countingSort();
+        shellSort();
+    }
+
+    private static void shellSort() {
+
+        int[] array = Array.generate(10, 0, 10);
+        System.out.println("Array: ");
+        Array.print(array);
+        ShellSort.run(array);
+        System.out.println("Array after ShellSort: ");
+        Array.print(array);
     }
 
     private static void countingSort() {
@@ -116,8 +125,7 @@ public class Main {
         int[] array = Array.generate(10, 0, 10);
         System.out.println("Array: ");
         Array.print(array);
-        //BubbleSort.run(array);
-        BubbleSortRepeat.run(array);
+        BubbleSort.run(array);
         System.out.println("Array after BubbleSort: ");
         Array.print(array);
     }
