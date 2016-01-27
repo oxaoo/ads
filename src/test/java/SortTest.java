@@ -158,4 +158,15 @@ public class SortTest {
                 assertTrue(array[j - 1] <= array[j]);
         }
     }
+
+    @Test
+    public void CombSortTest() {
+        for (int i = 0; i < iter; i++) {
+            //int[] array = Array.generate(1000);
+            int[] array = getArray(i);
+            CombSort.run(array);
+            for (int j = 1; j < array.length; j++)
+                assertTrue(array[j - 1] <= array[j]);
+        }
+    }
 }

@@ -16,6 +16,17 @@ public class Main {
         msdSort();
         countingSort();
         shellSort();
+        combSort();
+    }
+
+    private static void combSort() {
+
+        int[] array = Array.generate(10, 0, 10);
+        System.out.println("Array: ");
+        Array.print(array);
+        CombSort.run(array);
+        System.out.println("Array after CombSort: ");
+        Array.print(array);
     }
 
     private static void shellSort() {
